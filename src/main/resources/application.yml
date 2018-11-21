@@ -1,0 +1,49 @@
+server:
+  port: 8761
+  tomcat:
+       uri-encoding: UTF-8 # character encoding to use for URL decoding
+spring:
+  profiles:
+    active: dev
+  application:
+     name: eureka
+
+---
+spring:
+   profiles:  dev
+eureka:
+  instance:
+    hostname: test-eureka.ycxz-china.com
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#  server:
+#    enableSelfPreservation: false
+---
+spring:
+   profiles:  test
+eureka:
+  instance:
+    hostname: 172.16.46.224
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#  server:
+#    enableSelfPreservation: false
+---
+spring:
+   profiles:  online
+eureka:
+  instance:
+    hostname: 172.16.46.225
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
