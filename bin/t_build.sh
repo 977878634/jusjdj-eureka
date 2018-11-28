@@ -6,5 +6,5 @@ mvn package docker:build -Dmaven.test.skip=true
 sudo docker login --username=100003058154 ccr.ccs.tencentyun.com
 imageslist=`docker images`
 var1=`echo $imageslist|awk -F ' ' '{print $9}'`
-sudo docker tag $var1 ccr.ccs.tencentyun.com/justdj/eureka:[tag]
+sudo docker tag $var1 ccr.ccs.tencentyun.com/justdj/eureka:latest
 sudo docker push ccr.ccs.tencentyun.com/justdj/eureka:latest
