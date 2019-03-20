@@ -28,12 +28,12 @@ spring:
    profiles:  test
 eureka:
   instance:
-    hostname: 172.16.46.224
+    hostname: 122.152.193.63
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://122.152.193.63:8761/eureka
   server:
     enable-self-preservation: false
 #  server:
@@ -43,12 +43,12 @@ spring:
    profiles:  online
 eureka:
   instance:
-    hostname: 172.16.46.225
+    hostname: 122.152.193.63
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://122.152.193.63:8761/eureka
   server:
     enable-self-preservation: false
 
